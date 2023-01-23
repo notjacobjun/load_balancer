@@ -7,3 +7,6 @@ Starting from the root directory of the project run this command 'go go run ./cm
 - Note that you can replace the list of backends for other backends url's if you would like
 
 ![image](https://user-images.githubusercontent.com/67729558/213898780-933a924e-1202-4469-ac66-388e1d4c1f3e.png)
+
+### Demo of the app working in action (localhost 3034 intentionally left unused)
+![Screen Shot 2023-01-22 at 10 08 28 PM](https://user-images.githubusercontent.com/67729558/213975950-3e2bfa57-f1dd-4327-8dc8-087146adf6da.png)
