@@ -95,18 +95,17 @@ func main() {
 			ReverseProxy: rp,
 		})
 		log.Printf("Added backend %s to the pool", u)
-
-		// setup the server
-		Server := http.Server{
-			Addr:    fmt.Sprintf(":%d", port),
-			Handler: http.HandlerFunc(lb.LoadBalance),
-		}
-		// start the healthcheck goroutine
-		go healthCheck()
-		// start the load balancer
-		log.Printf("Load Balancer started at :%d\n", port)
-		if err := Server.ListenAndServe(); err != nil {
-			log.Fatal(err)
-		}
+	}
+	// setup the server
+	Server := http.Server{
+		Addr:    fmt.Sprintf(":%d", port),
+		Handler: http.HandlerFunc(lb.LoadBalance),
+	}
+	// start the healthcheck goroutine
+	go healthCheck()
+	// start the load balancer
+	log.Printf("Load Balancer started at :%d\n", port)
+	if err := Server.ListenAndServe(); err != nil {
+		log.Fatal(err)
 	}
 }
